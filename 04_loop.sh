@@ -2,7 +2,7 @@
 
 
 run_dir="/scratch/pawsey0964/lhuet/download/hic-complex/NEXT_250325_AD"
-temp="/scratch/pawsey0964/lhuet/download/hic-complex/NEXT_250325_AD"
+temp="/scratch/pawsey0964/lhuet/download/hic-complex/NEXT_250325_AD/temp"
 samples=(
     "OG37H-1_HICL OG37"
     "OG62G-1_HICL OG62"
