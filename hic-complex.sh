@@ -1,23 +1,19 @@
 #!/bin/bash --login
 #---------------
-
-
 #Requested resources:
-#SBATCH --account=pawsey0812
+#SBATCH --account=pawsey0964
 #SBATCH --job-name=HICLCA
 #SBATCH --partition=work
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=32
-#SBATCH --time=15:00:00
+#SBATCH --time=02:00:00
 #SBATCH --mem=64G
 #SBATCH --export=ALL
 #SBATCH --output=%x-%j.out
 #SBATCH --error=%x-%j.err
 
-
 date=$(date +%y%m%d)
-
 
 echo "========================================="
 echo "SLURM_JOB_ID = $SLURM_JOB_ID"
@@ -25,10 +21,8 @@ echo "SLURM_NODELIST = $SLURM_NODELIST"
 echo "DATE: $date"
 echo "========================================="
 
-
 full_path=$(pwd)
 echo "Full path: $full_path"
-
 
 run_dir="$1"
 echo "Run directory: $run_dir"
@@ -44,25 +38,19 @@ temp="$4"
  #Define Hi-C files
 H1="${run_dir}/${sample_dir}/"*R1*.fastq.gz
 
-
 for file in $H1; do
     echo "Hi-C forward: $file"
 done
 
-
 H2="${run_dir}/${sample_dir}/"*R2*.fastq.gz
-
 
 for file in $H2; do
     echo "Hi-C reverse: $file"
 done
 
-
 asm="${run_dir}/${sample_dir}/"*.fasta
 
-
 echo assembly: $asm
-
 
 singularity run $SING/samtools_1.16.1.sif samtools faidx $asm && \
 cut -f1,2 "${run_dir}/${sample_dir}/"*.fai > "${run_dir}/${sample_dir}/${OG}.genome" && \
