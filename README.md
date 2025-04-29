@@ -31,12 +31,12 @@ bash 02_get_primary_assemblies.sh "/scratch/pawsey0964/lhuet/download/hic-comple
 **Step 4.** Update the loop script for your samples and submit the script
 ```
 **example** 
-bash loop.sh
+bash 04_loop.sh
 ```
 **Step 5. **
 
 Copy the contents of the OGXX.out.preseq files to the relevant LabArchives HiC library prep entry. It will look like this:
-
+```
 TOTAL_READS        EXPECTED_DISTINCT        LOWER_0.95CI        UPPER_0.95CI
 0        0        0        0
 100000000.0        74047248.6        72906997.4        74927510.8
@@ -59,10 +59,10 @@ TOTAL_READS        EXPECTED_DISTINCT        LOWER_0.95CI        UPPER_0.95CI
 1800000000.0        248541404.4        236275015.5        259193697.9
 1900000000.0        250368174.7        237925621.6        261183304.1
 2000000000.0        252035380.6        239431010.3        263000247.7
-
+```
 
 Find and copy the summary stats in the job output file (HICLCA_*.out)- it will look like this, add this to the lab archivives page with the preseq output. 
-
+```
 =========================================
 SLURM_JOB_ID = 24183002
 SLURM_NODELIST = nid001357
@@ -86,4 +86,4 @@ No-Dup Valid Read Pairs (cis >= 1kb + trans)  3,653,132  73.48%
 No-Dup Cis Read Pairs < 1kb                   1,318,547  26.52%
 No-Dup Cis Read Pairs >= 1kb                  728,235    14.65%
 No-Dup Cis Read Pairs >= 10kb                 642,132    12.92%
-
+```
