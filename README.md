@@ -35,7 +35,7 @@ bash 04_loop.sh
 ```
 **Step 5. **
 
-Copy the contents of the OGXX.out.preseq files to the relevant LabArchives HiC library prep entry. It will look like this:
+Copy the contents of the OGXX.out.preseq files to the relevant LabArchives HiC library prep entry (which will be listed next to the sample in the asana card). It will look like this:
 ```
 TOTAL_READS        EXPECTED_DISTINCT        LOWER_0.95CI        UPPER_0.95CI
 0        0        0        0
